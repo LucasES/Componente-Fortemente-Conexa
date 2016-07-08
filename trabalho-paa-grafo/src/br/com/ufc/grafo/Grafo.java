@@ -7,12 +7,33 @@ package br.com.ufc.grafo;
 public class Grafo {
 
 	private int numeroVertices;
+	private int numeroArestas;
 	private int[][] matriz;
 	
 	public Grafo() {
 		super();
 	}
 
+	public int getNumeroVertices() {
+		return numeroVertices;
+	}
+
+	public void setNumeroVertices(int numeroVertices) {
+		this.numeroVertices = numeroVertices;
+	}
+
+	public int getNumeroArestas() {
+		return numeroArestas;
+	}
+
+	public void setNumeroArestas(int numeroArestas) {
+		this.numeroArestas = numeroArestas;
+	}
+
+	public int[][] getMatriz() {
+		return matriz;
+	}
+	
 	/**
 	 * Este método cria uma matriz com a quantidade de vértices informada.
 	 * 
@@ -24,13 +45,9 @@ public class Grafo {
 			this.matriz = new int[numeroVertices + 1][numeroVertices + 1];
 		} else {
 			System.out.println("Numero de vertices deve ser maior que 2 e menor ou igual a 2 mil");
+			System.exit(0);
 		}
 	}
-
-	public int[][] getMatriz() {
-		return matriz;
-	}
-
 
 	/**
 	 * Insere uma aresta unidirecional de v para w se a direção for 1. Se a
