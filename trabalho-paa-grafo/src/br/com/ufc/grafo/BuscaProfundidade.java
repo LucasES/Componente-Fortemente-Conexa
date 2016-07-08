@@ -1,5 +1,7 @@
 package br.com.ufc.grafo;
 
+import br.com.ufc.enums.Cor;
+
 public class BuscaProfundidade {
 
 	private int tempo = 0;
@@ -46,13 +48,13 @@ public class BuscaProfundidade {
 		criarMatriz(matrizTransposta);
 		
 		for (int vertice = 1; vertice < getMatriz().length; vertice++) {
-			this.cor[vertice] = "branco";
+			this.cor[vertice] = Cor.Branco.name();
 		}
 		
 		DfsVisit(maiorVertice);
 		
 		for (int vertice = 1; vertice < getMatriz().length; vertice++) {
-			if (cor[vertice].equals("branco")) {
+			if (cor[vertice].equals(Cor.Branco.name())) {
 				return 0;
 			}
 		}
@@ -64,11 +66,11 @@ public class BuscaProfundidade {
 		criarMatriz(matriz);
 
 		for (int vertice = 1; vertice < getMatriz().length; vertice++) {
-			this.cor[vertice] = "branco";
+			this.cor[vertice] = Cor.Branco.name();
 		}
 
 		for (int vertice = 1; vertice < getMatriz().length; vertice++) {
-			if (cor[vertice].equals("branco")) {
+			if (cor[vertice].equals(Cor.Branco.name())) {
 				DfsVisit(vertice);
 			}
 		}
@@ -85,18 +87,18 @@ public class BuscaProfundidade {
 	}
 
 	private void DfsVisit(int vertice) {
-		this.cor[vertice] = "cinza";
+		this.cor[vertice] = Cor.Cinza.name();
 		tempo++;
 		this.descoberta[vertice] = tempo;
 
 		for (int i = 1; i < getMatriz().length; i++) {
 			if (getMatriz()[vertice][i] == 1) {
-				if (getCor()[i].equals("branco")) {
+				if (getCor()[i].equals(Cor.Branco.name())) {
 					DfsVisit(i);
 				}
 			}
 		}
-		this.cor[vertice] = "preto";
+		this.cor[vertice] = Cor.Preto.name();
 		tempo++;
 		this.finalizacao[vertice] = tempo;
 	}
