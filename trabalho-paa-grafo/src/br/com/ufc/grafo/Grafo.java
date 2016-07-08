@@ -27,21 +27,10 @@ public class Grafo {
 		}
 	}
 
-	public int getNumeroVertices() {
-		return numeroVertices;
-	}
-
 	public int[][] getMatriz() {
 		return matriz;
 	}
 
-	public void setMatriz(int[][] matriz) {
-		this.matriz = matriz;
-	}
-
-	public void setNumeroVertices(int numeroVertices) {
-		this.numeroVertices = numeroVertices;
-	}
 
 	/**
 	 * Insere uma aresta unidirecional de v para w se a direção for 1. Se a
@@ -70,15 +59,21 @@ public class Grafo {
 	 * 
 	 * @param matriz
 	 */
-	public void transposta(int[][] matriz) {
+	public int[][] transposta(int[][] matriz) {
+		int[][] tempMatriz = new int[matriz[0].length][matriz.length];
 		for (int linha = 1; linha < matriz.length; linha++) {
-			for (int coluna = linha + 1; coluna < matriz.length; coluna++) {
+			for (int coluna = 1; coluna < matriz[1].length; coluna++) {
 				if (matriz[linha][coluna] == 1 && matriz[coluna][linha] == 0) {
-					matriz[coluna][linha] = 1;
-					matriz[linha][coluna] = 0;
+					tempMatriz[coluna][linha] = 1;
+					tempMatriz[linha][coluna] = 0;
+				} 
+				else if (matriz[linha][coluna] == 1 && matriz[coluna][linha] == 1) {
+					tempMatriz[coluna][linha] = 1;
+					tempMatriz[linha][coluna] = 1;
 				}
 			}
 		}
+		return tempMatriz;
 	}
 
 	/**
@@ -86,14 +81,14 @@ public class Grafo {
 	 * 
 	 * @param grafo
 	 */
-	public void imprimeGrafo(Grafo grafo) {
+	public void imprimeGrafo(int[][] matriz) {
 		int count = 0;
-		for (int i = 1; i < grafo.getMatriz().length; i++) {
-			for (int j = 1; j < grafo.getMatriz().length; j++) {
+		for (int i = 1; i < matriz.length; i++) {
+			for (int j = 1; j < matriz.length; j++) {
 				if (count % this.numeroVertices == 0) {
 					System.out.println();
 				}
-				System.out.print(grafo.getMatriz()[i][j] + " ");
+				System.out.print(matriz[i][j] + " ");
 				count++;
 			}
 		}

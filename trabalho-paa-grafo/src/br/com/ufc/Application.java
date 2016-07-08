@@ -1,5 +1,6 @@
 package br.com.ufc;
 
+import br.com.ufc.grafo.BuscaProfundidade;
 import br.com.ufc.grafo.Grafo;
 
 public class Application {
@@ -15,11 +16,34 @@ public class Application {
 		grafo.insereArestaDirecionada(3, 4, 1);
 		grafo.insereArestaDirecionada(4, 1, 2);
 
-		grafo.imprimeGrafo(grafo);
-
-		grafo.transposta(grafo.getMatriz());
+		int[][] matriz = grafo.getMatriz();
+		
+		grafo.imprimeGrafo(matriz);
 		System.out.println();
+		
+		BuscaProfundidade dfs = new BuscaProfundidade();
+		
+		dfs.DFS(matriz);
+		
+			
+		System.out.println();
+		System.out.println("Vertice de maior finalização: Vertice - " + dfs.verticeMaiorFinalizacao(dfs.getFinalizacao()));
+		
+		int[][] grafoTransposto = grafo.transposta(matriz);
 
-		grafo.imprimeGrafo(grafo);
+		grafo.imprimeGrafo(grafoTransposto);
+		
+//		dfs.DFS(grafoTransposto);
+		
+		BuscaProfundidade dfs2 = new BuscaProfundidade();
+		
+		
+//		System.out.println();
+//		System.out.println("Vertice de maior finalização: Vertice - " + dfs.verticeMaiorFinalizacao(dfs.getFinalizacao()));
+		int maiorVerticeFinal = dfs.verticeMaiorFinalizacao(dfs.getFinalizacao());
+		int saida = dfs2.CheckComponenteFortementeConexo(grafoTransposto, maiorVerticeFinal);
+		
+		System.out.println();
+		System.out.println("Saída = " +saida);
 	}
 }
