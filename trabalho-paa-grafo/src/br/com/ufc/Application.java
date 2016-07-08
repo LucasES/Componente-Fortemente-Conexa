@@ -38,8 +38,6 @@ public class Application {
 
 		int[][] grafoTransposto = grafo.transposta(grafo.getMatriz());
 
-		dfs.DFS(grafoTransposto);
-
 		BuscaProfundidade dfs2 = new BuscaProfundidade();
 
 		int maiorVerticeFinal = dfs.verticeMaiorFinalizacao(dfs.getFinalizacao());
