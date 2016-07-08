@@ -2,6 +2,12 @@ package br.com.ufc.grafo;
 
 import br.com.ufc.enums.Cor;
 
+/**
+ * Classe responsável por realizar a busca em profundidada (DFS) em uma matriz de adjacências.
+ * 
+ * @author Lucas Araújo - lucas.compufc@gmail.com
+ * @author Jonas Sousa - jonasdesousaf@gmail.com
+ */
 public class BuscaProfundidade {
 
 	private int tempo = 0;
@@ -43,6 +49,15 @@ public class BuscaProfundidade {
 		this.cor = cor;
 	}
 
+	/**
+	 * Este método tem como objetivo realizar mais uma DFS Visit na matriz transposta
+	 * com o objetivo  de encontrar algum vertice em branco ao final da verificação. 
+	 * Caso encontre, quer dizer que essa grafo não é uma única componente fortemente conexa.
+	 * 
+	 * @param matrizTransposta
+	 * @param maiorVertice
+	 * @return
+	 */
 	public int CheckComponenteFortementeConexo(int[][] matrizTransposta, int maiorVertice) {
 		
 		criarMatriz(matrizTransposta);
@@ -62,6 +77,11 @@ public class BuscaProfundidade {
 		return 1;
 	}
 
+	/**
+	 * Realiza a busca em profundidade em uma matriz de adjacências.
+	 * 
+	 * @param matriz
+	 */
 	public void DFS(int[][] matriz) {
 		criarMatriz(matriz);
 
@@ -76,6 +96,11 @@ public class BuscaProfundidade {
 		}
 	}
 
+	/**
+	 * Cria um grafo com uma matriz de adjacência.
+	 * 
+	 * @param matriz
+	 */
 	private void criarMatriz(int[][] matriz) {
 		setMatriz(matriz);
 
@@ -103,6 +128,12 @@ public class BuscaProfundidade {
 		this.finalizacao[vertice] = tempo;
 	}
 
+	/**
+	 * Encontra o vertice com o maior valor no array de finalizações.
+	 * 
+	 * @param finalizacoes
+	 * @return inteiro com a maior finalização.
+	 */
 	public int verticeMaiorFinalizacao(int[] finalizacoes) {
 		finalizacoes = getFinalizacao();
 		int verticeMaior = 0;

@@ -1,6 +1,8 @@
 package br.com.ufc.grafo;
 
 /**
+ * Classe responsável pela representação de um grafo utilizando matriz de adjacências.
+ * 
  * @author Lucas Araújo - lucas.compufc@gmail.com
  * @author Jonas Sousa - jonasdesousaf@gmail.com
  */

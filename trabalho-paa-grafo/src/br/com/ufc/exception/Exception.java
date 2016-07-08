@@ -2,6 +2,12 @@ package br.com.ufc.exception;
 
 import br.com.ufc.grafo.Grafo;
 
+/**
+ * Classe responsável pelos tratamentos de exceções de conversões de valores e acessos
+ * a índices incorretos.
+ * 
+ * @author Lucas Araújo - lucas.compufc@gmail.com
+ */
 public class Exception {
 
 	/**
