@@ -1,9 +1,6 @@
 # Componente-Fortemente-Conexos
 Este projeto tem como objetivo desenvolver um algoritmo capaz de informar se em um grafo é fortemente conexo ou não.
 
-
-
-
 ## DESCRIÇÃO: ##
 
  Em uma determinada cidade existem interseções N ligadas por ruas de sentido ´unico e em dois sentidos. E uma cidade moderna, e várias das 
@@ -28,4 +25,4 @@ caso contrário.
 
 ![paa](https://cloud.githubusercontent.com/assets/2569126/16679798/be6bd374-44c0-11e6-98ae-7eabce45626b.png)
 
-Developed By: @LucasES and @JonasDeSousaF
+Developed By: [Lucas Araújo](https://github.com/lucases) and [Jonas de Sousa](https://github.com/jonasdesousaf)
