@@ -1,5 +1,6 @@
 # Componente-Fortemente-Conexos
 Este projeto tem como objetivo desenvolver um algoritmo capaz de informar se em um grafo é fortemente conexo ou não.
+Representação utilizada: Matriz de Adjacência.
 
 ## DESCRIÇÃO: ##
 
