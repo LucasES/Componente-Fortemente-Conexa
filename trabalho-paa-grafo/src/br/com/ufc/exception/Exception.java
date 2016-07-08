@@ -2,7 +2,7 @@ package br.com.ufc.exception;
 
 import br.com.ufc.grafo.Grafo;
 
-public class ParseException {
+public class Exception {
 
 	/**
 	 * Realiza a conversão da entrada string para um inteiro.
@@ -30,14 +30,14 @@ public class ParseException {
 	 * @param pe
 	 * @param listaArestaDirecao
 	 */
-	public void insereArestaDaEntrada(Grafo grafo, ParseException pe, String[] listaArestaDirecao) {
+	public void insereArestaDaEntrada(Grafo grafo, Exception pe, String[] listaArestaDirecao) {
 		try {
 			int v = pe.parseInt(listaArestaDirecao[0]);
 			int w = pe.parseInt(listaArestaDirecao[1]);
 			int direcao = pe.parseInt(listaArestaDirecao[2]);
 
 			grafo.insereArestaDirecionada(v, w, direcao);
-		} catch (Exception e) {
+		} catch (IndexOutOfBoundsException e) {
 			System.out.println("Por favor informe 3 valores separador por espaço!");
 			System.out.println("Aresta V, W e Direção");
 			System.out.println("Exemplo: 1 2 3");
@@ -54,10 +54,27 @@ public class ParseException {
 	 * @param pe
 	 * @param entradaVerticesArestas
 	 */
-	public void setVerticeArestaEntrada(Grafo grafo, ParseException pe, String[] entradaVerticesArestas) {
+	public void setVerticeArestaEntrada(Grafo grafo, Exception pe, String[] entradaVerticesArestas) {
 		try {
 			grafo.setNumeroVertices(pe.parseInt(entradaVerticesArestas[0]));
 			grafo.setNumeroArestas(pe.parseInt(entradaVerticesArestas[1]));
+		} catch (IndexOutOfBoundsException e) {
+			System.exit(0);
+		}
+	}
+	
+	public void verificaQuantidadeArestas(Exception pe, String[] entradaVerticesArestas){
+		try {
+			int n = pe.parseInt(entradaVerticesArestas[0]);
+			int m = pe.parseInt(entradaVerticesArestas[1]);
+			int arestaRegra = n*(n-1)/2;
+			if(m >= 2 && m <= arestaRegra) {
+				System.out.println("Informe três valores, aresta N, aresta M e a direção");
+				System.out.println("Exemplo: 1 2 1");
+			}else {
+				System.out.println("Informe uma quantidade maior de arestas!");
+				System.exit(0);
+			}
 		} catch (IndexOutOfBoundsException e) {
 			System.exit(0);
 		}
