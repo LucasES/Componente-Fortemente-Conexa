@@ -25,3 +25,7 @@ interseções está ligado por no máximo uma rua.
 ## SAÍDA: ##
 Imprimir uma única linha contendo um inteiro C, onde C É igual a um se a condiao de conexão é satisfeita, e G é zero
 caso contrário.
+
+![paa](https://cloud.githubusercontent.com/assets/2569126/16679798/be6bd374-44c0-11e6-98ae-7eabce45626b.png)
+
+Developed By: @LucasES and @JonasDeSousaF
