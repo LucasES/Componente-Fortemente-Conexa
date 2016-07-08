@@ -25,4 +25,4 @@ caso contrário.
 
 ![paa](https://cloud.githubusercontent.com/assets/2569126/16679798/be6bd374-44c0-11e6-98ae-7eabce45626b.png)
 
-Developed By: [Lucas Araújo](https://github.com/lucases) and [Jonas de Sousa](https://github.com/jonasdesousaf)
+**Developed By:** [Lucas Araújo](https://github.com/lucases) and [Jonas de Sousa](https://github.com/jonasdesousaf)
