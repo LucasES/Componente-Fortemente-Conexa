@@ -81,11 +81,15 @@ public class Exception {
 			int n = pe.parseInt(entradaVerticesArestas[0]);
 			int m = pe.parseInt(entradaVerticesArestas[1]);
 			int arestaRegra = n*(n-1)/2;
-			if(m >= 2 && m <= arestaRegra) {
+			if (!(n >= 2 && n <= 2000)) {
+				System.out.println("Numero de vertices deve ser maior que 2 e menor ou igual a 2 mil");
+				System.exit(0);
+			}
+			else if(m >= 2 && m <= arestaRegra) {
 				System.out.println("Informe três valores, vértice V, vértice W e a direção (1 - unidirecional, 2 - bidirecional)");
 				System.out.println("Exemplo: 1 2 1. Quer dizer que: vértice 1 tem uma aresta direcionada para o vértice 2.");
 			}else {
-				System.out.println("Informe uma quantidade menor de arestas!");
+				System.out.println("Verifique se a quantidade de arestas está correta!");
 				System.exit(0);
 			}
 		} catch (IndexOutOfBoundsException e) {

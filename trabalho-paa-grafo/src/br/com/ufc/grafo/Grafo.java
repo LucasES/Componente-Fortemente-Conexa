@@ -42,13 +42,8 @@ public class Grafo {
 	 * @param numeroVertices
 	 */
 	public void criarGrafo(int numeroVertices) {
-		if (numeroVertices >= 2 && numeroVertices <= 2000) {
-			this.numeroVertices = numeroVertices;
-			this.matriz = new int[numeroVertices + 1][numeroVertices + 1];
-		} else {
-			System.out.println("Numero de vertices deve ser maior que 2 e menor ou igual a 2 mil");
-			System.exit(0);
-		}
+		this.numeroVertices = numeroVertices;
+		this.matriz = new int[numeroVertices + 1][numeroVertices + 1];
 	}
 
 	/**
