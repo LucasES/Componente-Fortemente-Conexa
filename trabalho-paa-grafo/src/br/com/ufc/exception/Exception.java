@@ -75,8 +75,8 @@ public class Exception {
 			int m = pe.parseInt(entradaVerticesArestas[1]);
 			int arestaRegra = n*(n-1)/2;
 			if(m >= 2 && m <= arestaRegra) {
-				System.out.println("Informe três valores, aresta N, aresta M e a direção");
-				System.out.println("Exemplo: 1 2 1");
+				System.out.println("Informe três valores, vértice V, vértice W e a direção (1 - unidirecional, 2 - bidirecional)");
+				System.out.println("Exemplo: 1 2 1. Quer dizer que: vértice 1 tem uma aresta direcionada para o vértice 2.");
 			}else {
 				System.out.println("Informe uma quantidade maior de arestas!");
 				System.exit(0);
