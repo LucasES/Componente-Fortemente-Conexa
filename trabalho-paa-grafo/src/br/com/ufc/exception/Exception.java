@@ -70,13 +70,12 @@ public class Exception {
 	}
 	
 	/**
-	 * Este método tem objetivo verificar se quantidade de arestas é válida
-	 * a partir do número de vértices informado.
+	 * Este método tem objetivo verificar se quantidade de vértices e arestas são válidas.
 	 * 
 	 * @param pe
 	 * @param entradaVerticesArestas
 	 */
-	public void verificaQuantidadeArestas(Exception pe, String[] entradaVerticesArestas){
+	public void verificaQuantidadeVerticesArestas(Exception pe, String[] entradaVerticesArestas){
 		try {
 			int n = pe.parseInt(entradaVerticesArestas[0]);
 			int m = pe.parseInt(entradaVerticesArestas[1]);
