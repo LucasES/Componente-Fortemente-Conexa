@@ -20,7 +20,7 @@ public class Application {
 
 		String[] entradaVerticesArestas = in.nextLine().split("\\s+");
 		
-		pe.verificaQuantidadeArestas(pe, entradaVerticesArestas);
+		pe.verificaQuantidadeVerticesArestas(pe, entradaVerticesArestas);
 		
 		pe.setVerticeArestaEntrada(grafo, pe, entradaVerticesArestas);
 
