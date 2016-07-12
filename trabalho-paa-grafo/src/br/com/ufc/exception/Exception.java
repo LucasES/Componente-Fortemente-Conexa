@@ -30,7 +30,7 @@ public class Exception {
 
 	/**
 	 * Este método tem como objetivo inserir valores inteiros nas arestas do grafo.
-	 * Respeito o formato de três numeros separados por espaço.
+	 * Respeitando o formato de três números separados por espaço.
 	 * 
 	 * @param grafo
 	 * @param pe
@@ -69,6 +69,13 @@ public class Exception {
 		}
 	}
 	
+	/**
+	 * Este método tem objetivo verificar se quantidade de arestas é válida
+	 * a partir do número de vértices informado.
+	 * 
+	 * @param pe
+	 * @param entradaVerticesArestas
+	 */
 	public void verificaQuantidadeArestas(Exception pe, String[] entradaVerticesArestas){
 		try {
 			int n = pe.parseInt(entradaVerticesArestas[0]);
@@ -78,7 +85,7 @@ public class Exception {
 				System.out.println("Informe três valores, vértice V, vértice W e a direção (1 - unidirecional, 2 - bidirecional)");
 				System.out.println("Exemplo: 1 2 1. Quer dizer que: vértice 1 tem uma aresta direcionada para o vértice 2.");
 			}else {
-				System.out.println("Informe uma quantidade maior de arestas!");
+				System.out.println("Informe uma quantidade menor de arestas!");
 				System.exit(0);
 			}
 		} catch (IndexOutOfBoundsException e) {
